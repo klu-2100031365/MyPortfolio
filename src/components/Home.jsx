@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import profilePic from "../assets/sud.jpg";
+import profilePic from "../assets/img8.jpg.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 // Framer animation variants
@@ -49,28 +49,26 @@ const Home = () => {
     }, typingSpeed);
 
     return () => clearInterval(interval);
-  }, [typing, currentTitleIndex, titles]);
+  }, [typing, currentTitleIndex]);
 
   return (
-    <motion.div
-      id="home"
-      className="pb-4 lg:mb-36"
-    >
+    <motion.div id="home" className="pb-4 lg:mb-36">
       <div className="flex flex-col lg:flex-row">
         {/* Image Section - Slide from Left */}
         <motion.div
-          className="w-full lg:w-3/7 flex justify-center lg:justify-start pl-6 mt-8"
-          variants={leftSlideVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: false, amount: 0.2 }}
-        >
-          <img
-            src={profilePic}
-            alt="Sudeep Varma"
-            className="border border-gray-300 rounded-4xl w-100 h-auto mx-auto"
-          />
-        </motion.div>
+  className="w-full lg:w-3/7 flex justify-center lg:justify-start pl-6 mt-8"
+  variants={leftSlideVariants}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false, amount: 0.2 }}
+>
+  <img
+    src={profilePic}
+    alt="Sudeep Varma"
+    className="border border-gray-300 rounded-4xl w-[24rem] sm:w-[28rem] h-auto mx-auto"
+  />
+</motion.div>
+
 
         {/* Text Section - Slide from Right */}
         <motion.div
@@ -86,25 +84,31 @@ const Home = () => {
               Sudeep Varma
             </h2>
 
-            <div className="flex gap-2">
-              <span className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl tracking-tight text-transparent">
-                {typing}
-              </span>
+            {/* Typing Effect - Fixed width to prevent shifting */}
+            <div className="flex justify-center lg:justify-start h-[2.5rem] w-full">
+              <div className="min-w-[18ch] text-center lg:text-left">
+                <span
+                  className="bg-gradient-to-r from-stone-300 to-stone-600 bg-clip-text text-3xl tracking-tight text-transparent inline-block"
+                  style={{ fontFamily: "'Poppins', sans-serif" }}
+                >
+                  {typing || "\u00A0"}
+                </span>
+              </div>
             </div>
 
-            <p className="my-4 text-lg text-center lg:text-left text-white">
-            I’m a passionate and dedicated Full Stack Web Developer with a strong foundation in both frontend
-             and backend technologies. I’m also proficient in Cloud Computing, enabling me to build scalable and 
-             reliable applications from end to end. With hands-on experience in modern frameworks, APIs, and cloud platforms,
+            <p className="my-4 text-lg text-center lg:text-left text-white px-4 lg:px-0">
+              I’m a passionate and dedicated Full Stack Web Developer with a strong foundation in both frontend
+              and backend technologies. I’m also proficient in Cloud Computing, enabling me to build scalable and 
+              reliable applications from end to end. With hands-on experience in modern frameworks, APIs, and cloud platforms,
               I love turning ideas into seamless, user-friendly digital experiences. I’m always eager to learn, explore new tools,
-               and deliver impactful solutions through technology.
+              and deliver impactful solutions through technology.
             </p>
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 mt-4">
               <a
                 href="/Sudeep.pdf"
                 download="Sudeep.pdf"
-                className="bg-white text-black py-4 px-2 rounded-full text-1xl font-bold tracking-tight transform transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-600 hover:shadow-lg"
+                className="bg-white text-black py-4 px-2 rounded-full text-lg font-bold tracking-tight transform transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-600 hover:shadow-lg"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
                 Download Resume
@@ -139,4 +143,3 @@ const Home = () => {
 };
 
 export default Home;
-
