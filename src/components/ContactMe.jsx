@@ -27,7 +27,7 @@ const ContactMe = () => {
   };
 
   return (
-    <section id="contact" className="py-20 px-4 text-gray-800 dark:text-white">
+    <section id="contact" className="py-20 px-4 text-white font-semibold dark:text-white">
       <motion.h2
         className="text-4xl font-bold text-center mb-12"
         initial={{ opacity: 0, y: 100 }}
