@@ -106,8 +106,8 @@ const Home = () => {
 
             <div className="flex flex-col lg:flex-row items-center lg:items-start gap-6 mt-4">
               <a
-                href="/Sudeep.pdf"
-                download="Sudeep.pdf"
+                href="/SudeepResume.pdf"
+                download="SudeepResume.pdf"
                 className="bg-white text-black py-4 px-2 rounded-full text-lg font-bold tracking-tight transform transition-transform duration-300 ease-in-out hover:scale-105 hover:text-blue-600 hover:shadow-lg"
                 style={{ fontFamily: "'Poppins', sans-serif" }}
               >
@@ -116,7 +116,7 @@ const Home = () => {
 
               <div className="flex gap-6 mt-4 lg:mt-0">
                 <a
-                  href="https://www.linkedin.com/in/datla-sudeep-varma-177028226"
+                  href="https://www.linkedin.com/in/datlasudeepvarma/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
